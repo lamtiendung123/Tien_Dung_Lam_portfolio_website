@@ -1,0 +1,25 @@
+# Kiro IDE / CLI V3 local agent read restrictions; not yet honored by Kiro Web.
+# Important: pattern-based ignores are defense in depth, NOT a security sandbox.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+.npmrc
+credentials/
+secrets/
+private/
+*credentials*.json
+*.secret
+*.log
+node_modules/
+dist/
+build/
+coverage/
+.tailscale/
+.kiro/settings/

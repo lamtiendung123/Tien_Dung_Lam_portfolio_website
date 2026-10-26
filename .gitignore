@@ -1,0 +1,35 @@
+# Local secrets — never commit actual credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.tfstate
+*.tfstate.*
+.npmrc
+credentials/
+secrets/
+private/
+*.secret
+*credentials*.json
+
+# Build/dependency and private tooling outputs
+node_modules/
+dist/
+build/
+.astro/
+.next/
+coverage/
+*.log
+*.tsbuildinfo
+.DS_Store
+.vscode/settings.local.json
+.kiro/settings/
+
+# Local development settings
+.tailscale/
