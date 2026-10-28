@@ -1,6 +1,3 @@
----
-inclusion: always
----
 # Anti-slop standards — design, writing, engineering
 
 ## Visual identity

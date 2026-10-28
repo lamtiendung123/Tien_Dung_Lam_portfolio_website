@@ -1,6 +1,3 @@
----
-inclusion: always
----
 # Hosting model: public static portfolio + private Tailscale services
 
 ## Deliberate separation

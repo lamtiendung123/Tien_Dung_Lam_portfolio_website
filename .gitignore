@@ -29,7 +29,12 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 .vscode/settings.local.json
-.kiro/settings/
+# Local Codex state if accidentally created within repo
+.codex/auth.json
+.codex/history.jsonl
+.codex/sessions/
+.codex/log/
+.codex/tmp/
 
 # Local development settings
 .tailscale/

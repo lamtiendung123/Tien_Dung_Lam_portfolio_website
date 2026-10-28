@@ -13,4 +13,4 @@ description: Review portfolio pages, copy and UI for generic AI slop, fabricated
 6. Output concise findings: BLOCKER / IMPORTANT / OPTIONAL; give file/section reference, concrete change and how to verify.
 7. Never claim an audit or benchmark ran if it did not. Never replace missing project evidence with plausible numbers.
 
-Use `.kiro/steering/anti-slop.md` scoring system, with zero tolerance for unsupported claims.
+Use `docs/ANTI_SLOP.md` scoring system, with zero tolerance for unsupported claims.

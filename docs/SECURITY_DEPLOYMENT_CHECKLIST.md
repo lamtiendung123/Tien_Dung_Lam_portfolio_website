@@ -6,8 +6,8 @@ Do not publish or expose a live service, `git push`, edit DNS, install remote sk
 
 ## 1. Before any commit
 
-- [ ] Confirm private values and files were never placed in repo, Kiro prompts, chat transcript or screenshots.
-- [ ] Verify `.gitignore` excludes secret files from git, **and** `.kiroignore` is configured in Kiro IDE. Remember: Kiro Web does not honor `.kiroignore` presently.
+- [ ] Confirm private values and files were never placed in repo, Codex prompts, chat transcript or screenshots.
+- [ ] Verify `.gitignore` excludes secret files from git, **and** `.gitignore` is configured in Codex IDE. Remember: Codex Web does not honor `.gitignore` presently.
 - [ ] Inspect `git status --short` and `git diff --stat` (no secret contents displayed). Review intended tracked paths. Avoid indiscriminate staging.
 - [ ] Run a reputable local secrets scanner (e.g., Gitleaks) across staged changes and repository history with non-verbose/redacted output. A clean scan does **not** guarantee there are no secrets.
 - [ ] If leaked previously, **revoke/rotate first**. History rewriting alone cannot revoke leaked credentials.

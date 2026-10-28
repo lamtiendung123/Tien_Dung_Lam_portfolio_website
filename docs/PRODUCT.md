@@ -1,6 +1,3 @@
----
-inclusion: always
----
 # Product: engineering and research portfolio
 
 ## Audience

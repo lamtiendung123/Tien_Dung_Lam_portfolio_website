@@ -21,7 +21,7 @@ As a recruiter or researcher, I want to identify the engineer's specialty and in
 - THE SITE SHALL not claim a paper, patent, tapeout, measured latency, or employer affiliation without owner verification.
 
 ### R4 — Original design
-- THE SITE SHALL follow `.kiro/steering/anti-slop.md` and reject generic template clichés and fabricated media.
+- THE SITE SHALL follow `docs/ANTI_SLOP.md` and reject generic template clichés and fabricated media.
 - WHEN viewed at 360px, 768px and desktop widths, THE SITE SHALL remain readable and navigable without horizontal overflow.
 
 ### R5 — Accessibility and performance
@@ -31,10 +31,10 @@ As a recruiter or researcher, I want to identify the engineer's specialty and in
 ### R6 — Privacy and security
 - THE SITE SHALL function without any runtime API key, authentication, custom backend, or database in MVP.
 - WHEN built, THE OUTPUT SHALL contain no secrets, env values, private material or accidental network endpoints.
-- THE REPOSITORY SHALL include `.gitignore`, `.kiroignore` and a documented preflight process; no actual credentials SHALL be committed.
+- THE REPOSITORY SHALL include `.gitignore` and a documented preflight process; no actual credentials SHALL be committed. Codex sandbox permissions are separate from Git ignore rules.
 
 ### R7 — Reviewable implementation
-- WHEN Kiro changes files, THE AGENT SHALL execute the applicable validation gates, show a concise diff summary and stop before any deployment, push, DNS, tunneling or network exposure without owner approval.
+- WHEN Codex changes files, THE AGENT SHALL execute the applicable validation gates, show a concise diff summary and stop before any deployment, push, DNS, tunneling or network exposure without owner approval.
 - THE AGENT SHALL not install untrusted community skills or run their scripts by default.
 
 ### R8 — Deployment model
