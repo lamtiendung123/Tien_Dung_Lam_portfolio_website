@@ -7,7 +7,7 @@ description: Review portfolio changes before commits/deployments for secret expo
 
 - Confirm no API is needed for requested changes. Challenge added server code, client keys, third-party scripts, MCPs and dependencies.
 - Review only visible, non-secret source and redacted scan outcomes. **Do not open `.env` or other secret files to inspect their values**, and never paste matched tokens in report.
-- Verify `.gitignore` and `.kiroignore` patterns, with explicit caveat: `.kiroignore` unsupported on Kiro Web as of October 2026 and not a replacement for host OS protections.
+- Verify `.gitignore` protects Git staging, but not Codex file reads. Check sandbox and approval boundaries separately.
 - Ensure browser bundles contain no server secrets, provider API keys, tokens, credentials, private service URLs or private documents.
 - Check secret scanning configured/run (do not assume); if a secret is found, stop and recommend immediate revoke/rotate.
 - Verify dependencies/lockfile, headers/config appropriate to chosen static host, escaped dynamic content, secure links, minimal telemetry and no unexpected outgoing requests.

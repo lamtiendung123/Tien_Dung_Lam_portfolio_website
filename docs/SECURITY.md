@@ -1,6 +1,3 @@
----
-inclusion: always
----
 # Security policy — hard release gate
 
 ## Threat model and trust boundaries
@@ -10,9 +7,9 @@ This is a **public code repository**, with agent-assisted development. Threats i
 ### Non-negotiable secrets rules
 
 - Never access or ask for real secrets in agent context, AI chat, output, diffs, screenshots, logs or issue comments. Never disclose API keys, session cookies, bearer tokens, credentials, environment values, private keys, tailnet auth keys, or recovery codes.
-- Keep secret material **outside the repository** wherever possible. If local runtime needs an env file, use restrictive OS permissions and prevent its inclusion with `.gitignore` and `.kiroignore`; never move it under `public/` or another published folder.
-- `*.env*` must not be checked into git, except a deliberately empty `.env.example` documenting variable names only. Confirm `.gitignore` and `.kiroignore` before adding files. Avoid `git add -A` before reviewing status.
-- `.kiroignore` reduces exposure to supported local agents, but **does not protect Kiro Web** (as of Oct 2026) and cannot prevent shell commands or unrelated tools with OS access from seeing secrets. Restrict OS access and approvals too.
+- Keep secret material **outside the repository** wherever possible. If local runtime needs an env file, use restrictive OS permissions and prevent its inclusion with `.gitignore` and `.gitignore`; never move it under `public/` or another published folder.
+- `*.env*` must not be checked into git, except a deliberately empty `.env.example` documenting variable names only. Confirm `.gitignore` and real sandbox restrictions before adding files. Avoid `git add -A` before reviewing status.
+- `.gitignore` does not prevent Codex or shell tools from reading ignored files. Keep real secrets outside the workspace and use actual sandbox, filesystem and approval restrictions.
 - Client-side code has no secrets. Anything bundled to browser, including `PUBLIC_`/`VITE_` variables, is public. A request from the browser cannot safely authenticate to a paid provider using a hidden key.
 - No secrets in GitHub Actions YAML. Use short-lived OIDC identity or protected host secrets when deployment actually needs it; restrict workflow permissions. Do not invent or require credentials now.
 - If a secret has ever been committed or exposed: **revoke/rotate it immediately**, check usage, remove it from tracked files and history with appropriate coordination. Deleting a line or adding `.gitignore` does not undo exposure.
@@ -36,7 +33,7 @@ This is a **public code repository**, with agent-assisted development. Threats i
 
 ### Agent permission defaults
 
-- `includeMcpJson: false`, `includePowers: false` for the supplied custom agent. Do not auto-approve shell commands. Require explicit owner confirmation for dependency installation, pushing, networking, publishing, or altering security configs.
+- This repository does not grant tool permissions. Configure Codex sandbox/approvals in the client; do not auto-approve risky shell commands. Require explicit owner confirmation for dependency installation, pushing, networking, publishing, or altering security configs.
 - Inspect and manually approve **individual** external skills before installing; no automatic `curl | sh`, arbitrary shell hooks or broad MCP permissions.
 
 ## Release checks

@@ -66,7 +66,7 @@ Require the owner to validate `verifiedResults` and `evidence`. Do not write spe
 ## Security architecture
 
 - Static files contain public facts only; no server-side key or personalized content.
-- `.gitignore` guards commits; `.kiroignore` guards reads in supported Kiro IDE/CLI environments; OS permissions/tool review also required. Web/cloud sessions do **not** get protected by `.kiroignore`.
+- `.gitignore` guards commits; `.gitignore` guards reads in supported Codex IDE/CLI environments; OS permissions/tool review also required. Web/cloud sessions do **not** get protected by `.gitignore`.
 - Use same-origin/local assets where reasonable, no unreviewed remote scripts. Review generated `dist/` and any source maps before release. Configure appropriate security headers on selected hosting platform.
 - Supply-chain minimization: inspect packages and maintain lockfile. Third-party agent skills are executable trust inputs; never install and run unseen ones.
 - CI/CD authentication should rely on minimal GitHub workflow permissions, and protected secrets only if actually required.

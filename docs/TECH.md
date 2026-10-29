@@ -1,6 +1,3 @@
----
-inclusion: always
----
 # Technical decisions
 
 - **Starting state:** only README.md and LICENSE were observed in the public repository as of 2026-10-26. Inspect before implementing because repo contents may change.

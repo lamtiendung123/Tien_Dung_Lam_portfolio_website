@@ -18,7 +18,7 @@
 
 ## Stage C — security and deployment (owner approval required)
 
-- [ ] **9. Run automated checks and a manual security review.** Typecheck/build; dependencies; generated output; secret scan with redacted findings; ensure .gitignore + .kiroignore are active on local environment. Apply review skills.
+- [ ] **9. Run automated checks and a manual security review.** Typecheck/build; dependencies; generated output; secret scan with redacted findings; verify `.gitignore` is effective for Git and Codex sandbox/approvals are configured separately. Apply review skills.
 - [ ] **10. Public static deployment** only after host, domain, CI permissions, headers and content are approved. No sensitive env variables at build time.
 - [ ] **11. Optional Tailscale-only local preview.** Only if the owner requests it: loopback server, authorized tailnet, restrictive grants/ACLs, `tailscale serve --bg 3000`, access validation and shutdown plan. Do not enable Funnel.
 - [ ] **12. Launch audit / handoff.** Verify URL and mobile/keyboard UX, verify absence of secrets and private APIs, record any remaining issues.
