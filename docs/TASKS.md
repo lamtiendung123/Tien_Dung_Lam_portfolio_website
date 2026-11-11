@@ -4,7 +4,7 @@
 
 ## Stage A — design and content (no secrets/network changes)
 
-- [ ] **1. Verify repo and define implementation plan.** Inspect current non-sensitive tree, decide whether Astro is acceptable, document exact new files and avoid overwriting README/LICENSE. Show plan for approval.
+- [x] **1. Verify repo and define implementation plan.** Inspect current non-sensitive tree, decide whether Astro is acceptable, document exact new files and avoid overwriting README/LICENSE. Show plan for approval. Owner approved `docs/IMPLEMENTATION_PLAN.md` on 2026-10-28.
 - [ ] **2. Verify content claims.** Complete `docs/CONTENT_EVIDENCE.md` from owner-provided facts, links, license/IP permissions and screenshots. Resolve any questionable numbers or project ownership. Never publish TODO values.
 - [ ] **3. Build a visual direction board in code/prose.** Define design tokens, fonts, responsive layout, a distinctive hero and one representative case-study layout. Owner reviews screenshots before applying style throughout.
 
