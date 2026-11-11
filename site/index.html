@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Tien Lam: RTL design and verification</title>
+  <meta name="description" content="Tien Lam is a computer engineering student at the University of South Florida working on RTL design and verification. This portfolio is laid out as a system-on-chip floorplan you can zoom into.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tien Lam: RTL design and verification">
+  <meta property="og:description" content="Research, internship and projects in RTL design and verification, laid out as a system-on-chip floorplan.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/soc.css">
+  <script src="assets/soc.js"></script>
+</head>
+<body>
+  <a class="skip" href="#detail">Skip to content</a>
+
+  <div class="stage" id="soc">
+    <header class="mast">
+      <div class="mast-main">
+        <p class="mono mast-id" aria-hidden="true">soc_top</p>
+        <h1>Tien Lam</h1>
+        <p class="mast-line">Computer engineering student at the University of South Florida working on RTL design and verification: SVA and UVM testbenches, FPGA timing closure, and full-custom CMOS layout.</p>
+      </div>
+      <p class="mono mast-hint js-only">Select a block to zoom in.<br><kbd>Esc</kbd> zooms out, <kbd>←</kbd> <kbd>→</kbd> step between blocks.</p>
+    </header>
+
+    <div class="die">
+      <nav class="die-nav" aria-label="Floorplan of sections">
+        <a class="blk blk--logic a-core" href="#core">
+          <span class="mono blk-inst" aria-hidden="true">u_core</span>
+          <span class="blk-name">Profile</span>
+          <span class="blk-sub">B.S. Computer Engineering, USF</span>
+          <span class="blk-cells" aria-hidden="true"><i>Tampa, FL</i><i>Expected Dec 2027</i></span>
+        </a>
+
+        <a class="blk blk--accel a-accel" href="#accel">
+          <span class="mono blk-inst" aria-hidden="true">u_accel</span>
+          <span class="blk-name">Research: HTM Spatial Pooler accelerator</span>
+          <span class="blk-sub">Undergraduate Research Assistant, Nano Computing Research Group, USF</span>
+          <span class="blk-cells" aria-hidden="true"><i>2048 columns</i><i>10M+ cycles bit-exact</i><i>200 MHz on Kria KV260</i><i>9 µs per inference</i></span>
+        </a>
+
+        <a class="blk blk--mem a-rom" href="#rom">
+          <span class="mono blk-inst" aria-hidden="true">u_rom</span>
+          <span class="blk-name">Education</span>
+          <span class="blk-sub">University of South Florida, Judy Genshaft Honors College</span>
+          <span class="blk-cells" aria-hidden="true"><i>GPA 4.0/4.0</i><i>Dean's List</i></span>
+        </a>
+
+        <a class="blk blk--io a-phy" href="#phy">
+          <span class="mono blk-inst" aria-hidden="true">u_phy</span>
+          <span class="blk-name">Internship: VNPT</span>
+          <span class="blk-sub">Hardware Verification &amp; Embedded Engineering Intern</span>
+          <span class="blk-cells" aria-hidden="true"><i>Packet framing RTL</i><i>CDC root cause</i></span>
+        </a>
+
+        <div class="ipgroup a-ip">
+          <p class="mono grp-label"><span aria-hidden="true">u_ip[3:0] · </span>Projects</p>
+          <a class="blk blk--logic" href="#ip-riscv">
+            <span class="mono blk-inst" aria-hidden="true">u_ip[0]</span>
+            <span class="blk-name">RISC-V SoC with systolic-array accelerator</span>
+            <span class="blk-cells" aria-hidden="true"><i>30+ SVA properties</i><i>12× at 100 MHz</i></span>
+          </a>
+          <a class="blk blk--logic" href="#ip-uvm">
+            <span class="mono blk-inst" aria-hidden="true">u_ip[1]</span>
+            <span class="blk-name">UVM testbench for an AXI4 DMA controller</span>
+            <span class="blk-cells" aria-hidden="true"><i>92% functional coverage</i><i>400 seeds</i></span>
+          </a>
+          <a class="blk blk--logic" href="#ip-bs">
+            <span class="mono blk-inst" aria-hidden="true">u_ip[2]</span>
+            <span class="blk-name">Pipelined fixed-point Black-Scholes datapath</span>
+            <span class="blk-cells" aria-hidden="true"><i>250 MHz</i><i>64-cycle latency</i></span>
+          </a>
+          <a class="blk blk--logic" href="#ip-mult">
+            <span class="mono blk-inst" aria-hidden="true">u_ip[3]</span>
+            <span class="blk-name">Full-custom CMOS 8×8 multiplier with scan chain</span>
+            <span class="blk-cells" aria-hidden="true"><i>900 × 900 µm</i><i>32-bit scan</i></span>
+          </a>
+        </div>
+
+        <a class="blk blk--io a-teams" href="#teams">
+          <span class="mono blk-inst" aria-hidden="true">u_teams</span>
+          <span class="blk-name">Chip design teams &amp; leadership</span>
+          <span class="blk-sub">Tiny Tapeout, IEEE SSCS Chipathon, IEEE EDS, GDG</span>
+          <span class="blk-cells" aria-hidden="true"><i>GF180MCU</i><i>LibreLane RTL-to-GDS</i></span>
+        </a>
+
+        <a class="blk blk--lib a-lib" href="#lib">
+          <span class="mono blk-inst" aria-hidden="true">u_lib</span>
+          <span class="blk-name">Technical skills</span>
+          <span class="blk-cells" aria-hidden="true"><i>SystemVerilog</i><i>UVM</i><i>SVA</i><i>AXI4</i><i>RISC-V</i><i>C / C++</i><i>Python</i><i>Vivado</i><i>Questa</i><i>Verilator</i><i>Virtuoso</i></span>
+        </a>
+      </nav>
+
+      <section class="tl a-clk" aria-labelledby="tl-t">
+        <div class="tl-head">
+          <span class="mono blk-inst" aria-hidden="true">u_clk</span>
+          <h2 class="tl-title" id="tl-t">Timeline</h2>
+          <p class="mono tl-key">solid: dated · hatched: year only · line: today</p>
+        </div>
+        <div class="tl-axis mono" aria-hidden="true"><span>2025</span><span>2026</span><span>2027</span></div>
+        <ul class="tl-rows">
+          <li><a href="#ip-riscv"><span class="tl-name">RISC-V SoC <small>Jan – May 2025</small></span><span class="tl-track"><span class="tl-bar t-riscv"></span></span></a></li>
+          <li><a href="#phy"><span class="tl-name">VNPT internship <small>May – Aug 2025</small></span><span class="tl-track"><span class="tl-bar t-vnpt"></span></span></a></li>
+          <li><a href="#accel"><span class="tl-name">Research assistant <small>Feb 2026 – present</small></span><span class="tl-track"><span class="tl-bar t-research is-open"></span></span></a></li>
+          <li><a href="#teams"><span class="tl-name">Tapeout teams <small>2026 – present</small></span><span class="tl-track"><span class="tl-bar t-teams is-open is-year"></span></span></a></li>
+          <li><a href="#ip-bs"><span class="tl-name">Black-Scholes datapath <small>2026</small></span><span class="tl-track"><span class="tl-bar t-bs is-year"></span></span></a></li>
+          <li><a href="#ip-uvm"><span class="tl-name">UVM testbench <small>Sep – Oct 2026</small></span><span class="tl-track"><span class="tl-bar t-uvm"></span></span></a></li>
+          <li><a href="#rom"><span class="tl-name">B.S. degree <small>expected Dec 2027</small></span><span class="tl-track"><span class="tl-bar t-grad is-mark"></span></span></a></li>
+        </ul>
+      </section>
+
+      <ul class="pads a-pads" aria-label="Contact">
+        <li><a href="mailto:tiendunglamwork@gmail.com"><span class="mono" aria-hidden="true">PAD 0</span>Email</a></li>
+        <li><a href="https://www.linkedin.com/in/tien-dung-lam-ab4395318" rel="noopener noreferrer"><span class="mono" aria-hidden="true">PAD 1</span>LinkedIn</a></li>
+        <li><a href="https://github.com/lamtiendung123" rel="noopener noreferrer"><span class="mono" aria-hidden="true">PAD 2</span>GitHub</a></li>
+      </ul>
+    </div>
+
+    <p class="note">The floorplan is a navigation diagram of this résumé, not the layout of a fabricated chip. Figures are as stated on the résumé. Static page: no tracking, no external requests.</p>
+  </div>
+
+  <main class="detail" id="detail">
+
+    <section class="mod mod--logic" id="core" data-inst="u_core" aria-labelledby="core-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Profile</p>
+            <h2 id="core-t" tabindex="-1">Tien Lam</h2>
+            <p class="mod-role">Computer engineering undergraduate at the University of South Florida in Tampa, FL, expected to graduate December 2027. Current work is RTL design and verification.</p>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Now</p>
+            <h3 class="row-fig is-text">Undergraduate Research Assistant</h3>
+            <p class="row-text">RTL design and verification in the Nano Computing Research Group at USF, since February 2026. <a class="go" href="#accel">Zoom to research</a></p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Before</p>
+            <h3 class="row-fig is-text">Intern at VNPT</h3>
+            <p class="row-text">Hardware verification and embedded engineering in Da Nang, Vietnam, May to August 2025. <a class="go" href="#phy">Zoom to internship</a></p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Teams</p>
+            <h3 class="row-fig is-text">Tiny Tapeout and Chipathon</h3>
+            <p class="row-text">Writing RTL for a planned GF180MCU submission and running a digital block through LibreLane with USF teams. <a class="go" href="#teams">Zoom to teams</a></p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Contact</p>
+            <h3 class="row-fig is-text">Get in touch</h3>
+            <p class="row-text"><a href="mailto:tiendunglamwork@gmail.com">tiendunglamwork@gmail.com</a><br>
+            <a href="https://www.linkedin.com/in/tien-dung-lam-ab4395318" rel="noopener noreferrer">linkedin.com/in/tien-dung-lam-ab4395318</a><br>
+            <a href="https://github.com/lamtiendung123" rel="noopener noreferrer">github.com/lamtiendung123</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--accel" id="accel" data-inst="u_accel" aria-labelledby="accel-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Research · Feb 2026 – Present</p>
+            <h2 id="accel-t" tabindex="-1">HTM Spatial Pooler accelerator</h2>
+            <p class="mod-role">Undergraduate Research Assistant, RTL Design &amp; Verification. Nano Computing Research Group, University of South Florida, Tampa, FL.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>SystemVerilog</li><li>SVA</li><li>AXI4-Stream</li><li>Vivado</li><li>Python</li><li>AMD Kria KV260</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Verify</p>
+            <h3 class="row-fig">10M+ <small>stimulus cycles, bit-exact</small></h3>
+            <p class="row-text">Verified a 2048-column HTM Spatial Pooler accelerator bit-exact against a Python golden model, using a self-checking SystemVerilog testbench that flags mismatches at cycle granularity.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Timing</p>
+            <h3 class="row-fig">200 MHz <small>zero violations on AMD Kria KV260</small></h3>
+            <p class="row-text">Closed timing with Vivado synthesis and static timing analysis, and signed off every AXI4-Stream interface with SVA checkers for tvalid/tready stability and tlast framing.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Debug</p>
+            <h3 class="row-fig">60% <small>less debug time on pipeline failures</small></h3>
+            <p class="row-text">Correlated assertion failure traces with on-chip event counters to root-cause a bad FSM transition.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Result</p>
+            <h3 class="row-fig">9 µs <small>per inference</small></h3>
+            <p class="row-text">The fixed design runs 28× faster than software on the ARM Cortex-A53.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--mem" id="rom" data-inst="u_rom" aria-labelledby="rom-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Education · Expected Dec 2027</p>
+            <h2 id="rom-t" tabindex="-1">B.S. Computer Engineering</h2>
+            <p class="mod-role">University of South Florida, Judy Genshaft Honors College. Tampa, FL.</p>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">GPA</p>
+            <h3 class="row-fig">4.0 <small>out of 4.0</small></h3>
+            <p class="row-text">Dean's List.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Honors</p>
+            <h3 class="row-fig is-text">Green &amp; Gold Presidential Scholarship</h3>
+            <p class="row-text">Full merit scholarship.</p>
+          </div>
+          <div class="row row--wide">
+            <p class="mono row-tag">Coursework</p>
+            <p class="row-text">Computer Architecture (pipelined microarchitecture, caches), Digital Logic Design, CMOS VLSI, C Programming.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--io" id="phy" data-inst="u_phy" aria-labelledby="phy-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Internship · May 2025 – Aug 2025</p>
+            <h2 id="phy-t" tabindex="-1">Packet framing RTL for a broadband router</h2>
+            <p class="mod-role">Hardware Verification &amp; Embedded Engineering Intern. VNPT (Vietnam Posts &amp; Telecommunications Group), Da Nang, Vietnam.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>Verilog</li><li>SVA</li><li>Oscilloscope</li><li>Logic analyzer</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">RTL</p>
+            <h3 class="row-fig is-text">Shipped into a production router</h3>
+            <p class="row-text">FSM-based packet framing RTL in Verilog, verified with directed and assertion-based testbenches, then integrated with firmware over a memory-mapped register bus.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Debug</p>
+            <h3 class="row-fig is-text">CDC failure root-caused in under one week</h3>
+            <p class="row-text">A clock-domain crossing failure appeared only on live traffic. Found it with oscilloscope and logic-analyzer captures, then added SVA handshake assertions to regression so it could not recur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--logic" id="ip-riscv" data-inst="u_ip[0]" aria-labelledby="ip-riscv-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Project · Jan 2025 – May 2025</p>
+            <h2 id="ip-riscv-t" tabindex="-1">RISC-V SoC with 8×8 systolic-array accelerator</h2>
+            <p class="mod-role">A PicoRV32 RISC-V SoC with a memory-mapped accelerator, verified with assertions before FPGA bring-up on Spartan-7.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>SystemVerilog</li><li>SVA</li><li>C</li><li>AXI4</li><li>Questa</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Assert</p>
+            <h3 class="row-fig">30+ <small>SVA properties</small></h3>
+            <p class="row-text">Properties on AXI4 handshakes, FIFO overflow/underflow, and PE-array boundaries exposed 4 control-FSM bugs that random simulation missed.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Stimulus</p>
+            <h3 class="row-fig is-text">Abstract PE-array model</h3>
+            <p class="row-text">Constraining stimulus with the model hit corner-case FSM states that unconstrained random runs missed.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Measure</p>
+            <h3 class="row-fig">12× <small>over CPU-only, at 100 MHz on Spartan-7</small></h3>
+            <p class="row-text">Measured with self-checking bare-metal C tests that drive the accelerator through memory-mapped loads and stores and report pass/fail over UART.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--logic" id="ip-uvm" data-inst="u_ip[1]" aria-labelledby="ip-uvm-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Project · Sep 2026 – Oct 2026</p>
+            <h2 id="ip-uvm-t" tabindex="-1">UVM testbench for an AXI4 DMA controller</h2>
+            <p class="mod-role">A UVM environment that checks every transfer against a C reference model.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>UVM</li><li>SystemVerilog</li><li>C</li><li>Python</li><li>TCL</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Env</p>
+            <h3 class="row-fig is-text">AXI4 agents, RAL model, scoreboard</h3>
+            <p class="row-text">Every transfer is checked against a C reference model through DPI-C, with SVA checkers bound to the bus so protocol errors fail on the exact cycle.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Coverage</p>
+            <h3 class="row-fig">92% <small>functional coverage over 400 seeds</small></h3>
+            <p class="row-text">Constrained-random over burst length, unaligned addresses, 4KB crossings, and back-pressure. Exposed 3 RTL bugs, including a dropped last beat on unaligned bursts.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Regress</p>
+            <h3 class="row-fig is-text">Automated regression</h3>
+            <p class="row-text">Python/TCL scripts run seeds in parallel, merge coverage, and bucket log failures by signature.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--logic" id="ip-bs" data-inst="u_ip[2]" aria-labelledby="ip-bs-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Project · 2026</p>
+            <h2 id="ip-bs-t" tabindex="-1">Pipelined fixed-point datapath (Black-Scholes pricer)</h2>
+            <p class="mod-role">A fixed-point datapath that replaces exp, log, sqrt, and the normal CDF with lookup tables and polynomials.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>SystemVerilog</li><li>C++</li><li>Python</li><li>Verilator</li><li>Vivado</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Pipeline</p>
+            <h3 class="row-fig">250 MHz <small>one result per clock</small></h3>
+            <p class="row-text">Fixed 64-cycle latency, bit-exact to a C++ model in Verilator.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Width</p>
+            <h3 class="row-fig">25 bits <small>chosen from an 18 to 32 bit sweep</small></h3>
+            <p class="row-text">A Python design-space script swept word width; 25 bits was the narrowest that held error under 2×10<sup>−5</sup>.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">PPA</p>
+            <h3 class="row-fig">−31% <small>DSP area, with −22% estimated power</small></h3>
+            <p class="row-text">Both compared with a 32-bit build.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--logic" id="ip-mult" data-inst="u_ip[3]" aria-labelledby="ip-mult-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Project · CMOS VLSI course</p>
+            <h2 id="ip-mult-t" tabindex="-1">Full-custom CMOS 8×8 array multiplier with scan chain</h2>
+            <p class="mod-role">Hand layout in Cadence Virtuoso, simulated in Spectre.</p>
+          </div>
+          <div class="mod-tools">
+            <p class="mono pins-label">Tools</p>
+            <ul class="pins mono"><li>Cadence Virtuoso</li><li>Spectre</li></ul>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">Layout</p>
+            <h3 class="row-fig">900 × 900 µm <small>fixed die</small></h3>
+            <p class="row-text">An 8×8 array multiplier (64 AND gates, 56 adder cells) laid out by hand with a rectangular floorplan, power rails, and clock routing.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">DFT</p>
+            <h3 class="row-fig">32-bit <small>scan chain</small></h3>
+            <p class="row-text">The chain runs through the X, Y, and P registers. Passes 8/8 normal and 2/2 scan-mode Spectre tests.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--io" id="teams" data-inst="u_teams" aria-labelledby="teams-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Teams &amp; leadership</p>
+            <h2 id="teams-t" tabindex="-1">Chip design teams &amp; leadership</h2>
+            <p class="mod-role">Student tapeout teams and technical roles at the University of South Florida.</p>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row">
+            <p class="mono row-tag">2026 – present</p>
+            <h3 class="row-fig is-text">USF IEEE-EDS Tiny Tapeout Team</h3>
+            <p class="row-text">Writing and verifying SystemVerilog RTL for a design the team plans to submit for tapeout on GlobalFoundries' GF180MCU process.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">2026 – present</p>
+            <h3 class="row-fig is-text">IEEE SSCS Chipathon, USF Digital Design Team</h3>
+            <p class="row-text">Running the team's digital block through the open-source LibreLane RTL-to-GDS flow.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Officer</p>
+            <h3 class="row-fig is-text">Technical Chair, IEEE Electron Devices Society, USF</h3>
+            <p class="row-text">Designed a multi-protocol communication chip for a trading system at the Jane Street chip hackathon, and built a fruit-fly brain model on a Microchip FPGA at a hackathon.</p>
+          </div>
+          <div class="row">
+            <p class="mono row-tag">Lead</p>
+            <h3 class="row-fig is-text">Technical Lead, Google Developer Groups</h3>
+            <p class="row-text">Taught 15+ students to control multiple ESP32 boards in a hands-on workshop on Google Cloud authentication and the Gemini API.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mod mod--lib" id="lib" data-inst="u_lib" aria-labelledby="lib-t">
+      <div class="mod-frame">
+        <header class="mod-head">
+          <div>
+            <p class="mono mod-kind">Cell library</p>
+            <h2 id="lib-t" tabindex="-1">Technical skills</h2>
+          </div>
+        </header>
+        <div class="rows">
+          <div class="row row--wide">
+            <h3 class="mono row-tag">CPU &amp; architecture</h3>
+            <ul class="pins mono"><li>RISC-V ISA</li><li>PicoRV32</li><li>Pipelining</li><li>Caches</li><li>Memory hierarchy</li><li>Memory-mapped I/O</li><li>AXI4</li><li>DMA</li></ul>
+          </div>
+          <div class="row row--wide">
+            <h3 class="mono row-tag">Verification</h3>
+            <ul class="pins mono"><li>UVM</li><li>SVA</li><li>Checkers</li><li>Functional coverage</li><li>Constrained-random</li><li>Scoreboards</li><li>Regression</li><li>Waveform debug</li><li>CDC</li></ul>
+          </div>
+          <div class="row row--wide">
+            <h3 class="mono row-tag">Design</h3>
+            <ul class="pins mono"><li>RTL design</li><li>Pipelining</li><li>Synthesis</li><li>Static timing analysis</li><li>PPA tradeoffs</li><li>RTL-to-GDS (LibreLane)</li><li>CMOS layout</li><li>DFT</li></ul>
+          </div>
+          <div class="row row--wide">
+            <h3 class="mono row-tag">Languages &amp; tools</h3>
+            <ul class="pins mono"><li>SystemVerilog</li><li>Verilog</li><li>C</li><li>C++</li><li>Python</li><li>TCL</li><li>Bash</li><li>Questa</li><li>Verilator (lint)</li><li>Vivado</li><li>Virtuoso</li><li>Git</li><li>Linux</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
